@@ -1,0 +1,12 @@
+build/*.js
+src/assets
+public
+dist
+
+# 类型
+typings
+
+# 第三方库
+wxcomponents
+qqmap-wx-jssdk1.2
+tki-qrcode
