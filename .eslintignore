@@ -2,7 +2,7 @@ build/*.js
 src/assets
 public
 dist
-
+src
 # 类型
 typings
 
