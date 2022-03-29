@@ -1,13 +1,10 @@
 import React from 'react'
-import { Footer } from 'bdw-components'
 import { Button, Menu } from 'antd'
-import { HeaderDropdown } from 'bdw-components'
 import 'antd/dist/antd.css'
 import './index.css'
 
 import ProTableTest from '../ProTableTest'
 import ProTableOtherTest from '../ProTableOtherTest'
-import { enums, constants, config } from 'bdw-utils'
 
 const TestCom = (props: any) => {
   enum E1 {
