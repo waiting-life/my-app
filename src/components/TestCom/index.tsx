@@ -79,9 +79,6 @@ const TestCom = (props: any) => {
   console.log(E, E.B, E.A, E[0], E[getSomeValue('cpp')])
   console.log(E1.X, E1.Y, E1.Z, E1[0], E1[1], E2[2])
   console.log(E2, E2.A, E2.B, E2.C, E2[0], E2[1], E2[2], E2[3])
-  console.log(Footer)
-  console.log(enums.TOKEN_KEY)
-  console.log(constants, config)
   // enums.TOKEN_KEY = '123'
   const menuHeaderDropdown = (
     <Menu selectedKeys={[]}>
@@ -94,11 +91,8 @@ const TestCom = (props: any) => {
   return (
     <div>
       <div>
-        <HeaderDropdown overlay={menuHeaderDropdown} overlayClassName="test">
           <Button>hover 展示菜单</Button>
-        </HeaderDropdown>
       </div>
-      <Footer />
       <ProTableTest />
       <ProTableOtherTest />
       <img
