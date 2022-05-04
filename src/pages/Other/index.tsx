@@ -1,10 +1,9 @@
-import React from 'react'
-
+import PageContainer from "../../components/PageContainer"
 const Other = () => {
   return (
-    <div>
-      <h2>Other page</h2>
-    </div>
+   <PageContainer>
+     <h2>Other Page</h2>
+   </PageContainer>
   )
 }
 export default Other

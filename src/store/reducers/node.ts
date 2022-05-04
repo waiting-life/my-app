@@ -227,7 +227,7 @@ function addNodeByParentId(node: INode, id: number, data: any): INode {
   return node;
 }
 
-export const treeReducer = (state = defaultState, action: NodeAction) => {
+export const nodeReducer = (state = defaultState, action: NodeAction) => {
   switch (action.type) {
     case EDIT_NODE:
       console.log("action", action);

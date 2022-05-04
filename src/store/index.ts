@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
-import { userReducer, treeReducer } from "./reducers";
+import { userReducer, nodeReducer } from "./reducers";
 
-const reducer = combineReducers({ user: userReducer, tree: treeReducer });
+const reducer = combineReducers({ user: userReducer, node: nodeReducer });
 
 const store = createStore(reducer);
 export default store;
