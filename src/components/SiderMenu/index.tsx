@@ -1,6 +1,7 @@
 import { Menu } from "antd";
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import { NavLink } from "react-router-dom";
+import { routes } from "../../router";
 
 const { SubMenu } = Menu;
 
@@ -39,11 +40,15 @@ const SiderMenu = (props: any) => {
         <Menu.Item key="home2"><NavLink to={'/home/home2'} >home2</NavLink></Menu.Item>
         <Menu.Item key="home3"><NavLink to={'/home/home3'} >home3</NavLink></Menu.Item>
       </SubMenu> */}
-      <Menu.Item key="home1"><NavLink to={'/home1'} >Home</NavLink></Menu.Item>
+      {/* <Menu.Item key="home1"><NavLink to={'/home1'} >Home</NavLink></Menu.Item>
       <Menu.Item key="other"><NavLink to={'/other'}>Other</NavLink></Menu.Item>
       <Menu.Item key="antd-test"><NavLink to={'/antd-test'}>AntdTest</NavLink></Menu.Item>
+      <Menu.Item key="react-test"><NavLink to={'/react-test'}>ReactTest</NavLink></Menu.Item>
       <Menu.Item key="redux-test"><NavLink to={'/redux-test'}>ReduxTest</NavLink></Menu.Item>
-      <Menu.Item key="test"><NavLink to={'/test'}>Test</NavLink></Menu.Item>
+      <Menu.Item key="test"><NavLink to={'/test'}>Test</NavLink></Menu.Item> */}
+      {routes.map((item) => {
+        return <Menu.Item key={item.title}><NavLink to={item.path}>{item.title}</NavLink></Menu.Item>
+      })}
     </Menu>
   ) 
 }

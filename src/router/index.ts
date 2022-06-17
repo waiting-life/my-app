@@ -6,11 +6,12 @@ import Home3 from '../pages/home/Home3'
 import Login from '../pages/Login'
 import Other from '../pages/Other'
 import Test from '../pages/Test'
+import ReactTest from '../pages/ReactTest'
 // () => import(/* webpackChunkName: "about" */'../pages/Home')
 
-export const routes: any = [
+export const routes: {path: string; title?: string; component:any}[] = [
   {
-    path: '/home1',
+    path: '/home1', 
     title: '首页',
     component: Home1
     // routes: [
@@ -35,6 +36,11 @@ export const routes: any = [
     path: '/antd-test',
     title: 'antd练习',
     component: AntdTest
+  },
+  {
+    path: '/react-test',
+    title: 'react练习',
+    component: ReactTest
   },
   {
     path: '/redux-test',

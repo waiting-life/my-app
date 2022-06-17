@@ -52,7 +52,7 @@ const App = () => {
           background: "rgba(255, 255, 255, 0.3)" }}></div>
         <div onClick={() => setCollapsed(!collapsed)} style={{padding: "0 24px", fontSize: "18px", lineHeight: "64px", cursor: "pointer", color: "#fff" }}>{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined/>}</div>
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          {new Array(15).fill(null).map((_, index) => <Menu.Item>{`nav${index+1}`}</Menu.Item>)}
+          {new Array(15).fill(null).map((_, index) => <Menu.Item key={index}>{`nav${index+1}`}</Menu.Item>)}
         </Menu>
       </Header>
     
