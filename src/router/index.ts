@@ -1,52 +1,54 @@
 import AntdTest from '../pages/AntdTest'
 import ReduxTest from '../pages/ReduxTest'
-import Home1 from '../pages/home/Home1'
-import Home2 from '../pages/home/Home2'
-import Home3 from '../pages/home/Home3'
+import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Other from '../pages/Other'
 import Test from '../pages/Test'
 import ReactTest from '../pages/ReactTest'
 // () => import(/* webpackChunkName: "about" */'../pages/Home')
 
-export const routes: {path: string; title?: string; component:any}[] = [
+export const routes: {path: string; title?: string; component?:any, routes?: any[]}[] = [
   {
-    path: '/home1', 
+    path: '/home', 
     title: '首页',
-    component: Home1
-    // routes: [
-    //   {
-    //     title: '主页1',
-    //     path: '/home/home1',
-    //     component: Home1,
-    //   },
-    //   {
-    //     title: '主页2',
-    //     path: '/home/home2',
-    //     component: Home2,
-    //   },
-    //   {
-    //     title: '主页3',
-    //     path: '/home/home3',
-    //     component: Home3,
-    //   },
-    // ]
+    component: Home
   },
   {
-    path: '/antd-test',
-    title: 'antd练习',
-    component: AntdTest
+    path: '/mytest',
+    title: '我的练习',
+    routes: [
+      {
+        path: '/antd-test',
+        title: 'antd练习',
+        component: AntdTest
+      },
+      {
+        path: '/react-test',
+        title: 'react练习',
+        component: ReactTest
+      },
+      {
+        path: '/redux-test',
+        title: 'redux测试',
+        component: ReduxTest
+      },
+    ]
   },
-  {
-    path: '/react-test',
-    title: 'react练习',
-    component: ReactTest
-  },
-  {
-    path: '/redux-test',
-    title: 'redux测试',
-    component: ReduxTest
-  },
+  // {
+  //   path: '/antd-test',
+  //   title: 'antd练习',
+  //   component: AntdTest
+  // },
+  // {
+  //   path: '/react-test',
+  //   title: 'react练习',
+  //   component: ReactTest
+  // },
+  // {
+  //   path: '/redux-test',
+  //   title: 'redux测试',
+  //   component: ReduxTest
+  // },
   {
     path: '/other',
     title: '其他',

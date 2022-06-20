@@ -12,12 +12,14 @@ export default function UseEffectCom() {
     // console.log(`count: -------${count}`)
     // console.log(`person: --------${person}`)
     let timer = setTimeout(() => {
-      console.log(count, '?????')
+      console.log(count)
     }, 4000);
     // const handler = (e) => {
     //   console.log(e)
     // }
     // window.addEventListener('click', handler)
+
+    console.log('xxx') // 执行次数
     
     return () => {
       // window.removeEventListener('click', handler)

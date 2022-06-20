@@ -1,6 +1,6 @@
 import { Tabs } from 'antd';
 import PageContainer from '../../components/PageContainer';
-import { Base, FormCom, TableCom } from './components';
+import { Base, FormCom, TableCom, MenuCom } from './components';
 import './index.css'
 
 const {TabPane} = Tabs
@@ -16,6 +16,7 @@ export default function AntdTest() {
         <TabPane tab="基础" key="base" ><Base/></TabPane>
         <TabPane tab="表单" key="form" ><FormCom/></TabPane>
         <TabPane tab="表格" key="table"><TableCom/></TabPane>
+        <TabPane tab="menu" key="menu"><MenuCom/></TabPane>
       </Tabs>
     </PageContainer>
     

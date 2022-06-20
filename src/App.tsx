@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Switch, Route, useHistory, NavLink } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import {
   MenuUnfoldOutlined,
@@ -11,13 +11,12 @@ import { routes } from "./router";
 
 const { Header, Footer, Sider } = Layout;
 
-function RouteWithSubRoutes(route: any) {
+function RouteWithSubRoutes(MyRoute: any) {
   return (
     <Route
-      path={route.path}
+      path={MyRoute.path} 
       render={props => (
-        // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        <MyRoute.component {...props} routes={MyRoute.routes} />
       )}
     />
   );
@@ -28,7 +27,7 @@ const App = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false)
 
   return (
-    <Layout style={{minHeight: '100vh'}}>
+    <Layout style={{minHeight: '100vh'}} className="my-layout">
       {/* <Header>hader</Header>
       <Content>content</Content>
       <Footer>footer</Footer> */}
@@ -52,7 +51,7 @@ const App = () => {
           background: "rgba(255, 255, 255, 0.3)" }}></div>
         <div onClick={() => setCollapsed(!collapsed)} style={{padding: "0 24px", fontSize: "18px", lineHeight: "64px", cursor: "pointer", color: "#fff" }}>{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined/>}</div>
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          {new Array(15).fill(null).map((_, index) => <Menu.Item key={index}>{`nav${index+1}`}</Menu.Item>)}
+          {new Array(8).fill(null).map((_, index) => <Menu.Item key={index}>{`nav${index+1}`}</Menu.Item>)}
         </Menu>
       </Header>
     
@@ -63,9 +62,10 @@ const App = () => {
         <Layout style={{ padding: '0 24px 24px' }}>
           <BreadcrumbCom/>
           <Switch>
-            {routes.map((route: any, i: number) => (
+            {/* {routes.map((route: any, i: number) => (
               <RouteWithSubRoutes key={i} {...route} />
-            ))}
+            ))} */}
+            {Array.from(generateRoutes(routes))}
           </Switch>
           <Footer style={{ textAlign: 'center' }} >Footer</Footer>
         </Layout>
@@ -73,6 +73,15 @@ const App = () => {
     </Layout>
   );
 };
+
+function* generateRoutes(routes: any[]): any {
+  for (const route of routes) {
+    yield  <RouteWithSubRoutes {...route} />
+    if (route.routes) {
+      yield* generateRoutes(route.routes)
+    }
+  }
+}
 
 export default App;
 

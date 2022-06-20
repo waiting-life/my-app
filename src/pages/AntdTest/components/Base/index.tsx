@@ -173,14 +173,14 @@ export const Base = () => {
           <Button>container的图钉</Button>
         </Affix>
         {new Array(20).fill(null).map((_, index) => {
-          return <div>内容{index}</div>
+          return <div key={index}>内容{index}</div>
         })}
       </div>
       <Dropdown overlay={menu} placement="top" arrow={{ pointAtCenter: true }} trigger={['contextMenu']}>
         <Button>hover me</Button>
       </Dropdown>
       <AutoComplete onSearch={onSearch} options={options} style={{ width: 200 }} backfill />
-      <Cascader options={cascaderOptions} onChange={onChange} />
+      <Cascader defaultValue={['zhejiang', 'hangzhou', 'xihu']} options={cascaderOptions} onChange={onChange} />
     </div>
   )
 }

@@ -6,6 +6,8 @@ import UseMemoCom from "./child/UseMemoCom"
 import UseCallbackCom from "./child/UseCallbackCom"
 import UseContextCom from "./child/UseContextCom"
 import UseImperativeHandleCom from "./child/UseImperativeHandleCom"
+import ReactForwardRef from "./child/ReactForwardRef"
+import PortalCom from "./child/PortalCom"
 
 const ReactTest = () => {
   return (
@@ -23,8 +25,12 @@ const ReactTest = () => {
       <UseCallbackCom/>
       <h3>useContext</h3>
       <UseContextCom/>
-      <h4>useImperativeHandle</h4>
+      <h3>useImperativeHandle</h3>
       <UseImperativeHandleCom/>
+      <h3>React.forwardRef()</h3>
+      <ReactForwardRef/>
+      <h3>Portal</h3>
+      <PortalCom/>
     </div>
   )
 }
