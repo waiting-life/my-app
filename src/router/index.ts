@@ -5,9 +5,34 @@ import Login from '../pages/Login'
 import Other from '../pages/Other'
 import Test from '../pages/Test'
 import ReactTest from '../pages/ReactTest'
+// import { FrontStudy, OtherStudy } from '../pages/study'
 // () => import(/* webpackChunkName: "about" */'../pages/Home')
 
-export const routes: {path: string; title?: string; component?:any, routes?: any[]}[] = [
+export interface RouteItem {
+  path: string;
+  title?: string;
+  component?: any;
+  redirect?: string;
+  routes?: RouteItem[]
+}
+
+export const routes: RouteItem[] = [
+  // {
+  //   path: 'study',
+  //   redirect: '/front-study',
+  //   routes: [
+  //     {
+  //       path: '/front-study',
+  //       title: '前端学习', 
+  //       component: FrontStudy
+  //     },
+  //     {
+  //       path: '/other-study',
+  //       title: '其他学习', 
+  //       component: OtherStudy
+  //     }
+  //   ]
+  // },
   {
     path: '/home', 
     title: '首页',

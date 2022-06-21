@@ -11,7 +11,14 @@ import { routes } from "./router";
 
 const { Header, Footer, Sider } = Layout;
 
-function RouteWithSubRoutes(MyRoute: any) {
+interface RouteItem {
+  path: string;
+  title?: string;
+  component?: any;
+  redirect?: string;
+  routes?: RouteItem[]
+}
+function RouteWithSubRoutes(MyRoute: RouteItem) {
   return (
     <Route
       path={MyRoute.path} 
@@ -23,7 +30,6 @@ function RouteWithSubRoutes(MyRoute: any) {
 }
 
 const App = () => {
-  // const history = useHistory()
   const [collapsed, setCollapsed] = useState<boolean>(false)
 
   return (
@@ -74,9 +80,9 @@ const App = () => {
   );
 };
 
-function* generateRoutes(routes: any[]): any {
+function* generateRoutes(routes: RouteItem[]): any {
   for (const route of routes) {
-    yield  <RouteWithSubRoutes {...route} />
+    yield  <RouteWithSubRoutes key={route.path} {...route} />
     if (route.routes) {
       yield* generateRoutes(route.routes)
     }
@@ -84,4 +90,5 @@ function* generateRoutes(routes: any[]): any {
 }
 
 export default App;
+
 
