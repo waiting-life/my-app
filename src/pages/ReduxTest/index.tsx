@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useSelector, useStore, useDispatch } from "react-redux";
-import { INode } from "../../store/reducers";
 import { InputNumber } from "antd";
+import PageContainer from "../../components/PageContainer";
+import { INode } from "../../store/reducers";
 import { useFlattenedTree, useNode } from "../../store/hooks";
 import {
   createEditAction,
@@ -11,7 +11,6 @@ import {
   createDeleteNodeAction,
   createAddNodeAction,
 } from "../../store/reducers";
-import PageContainer from "../../components/PageContainer";
 
 // function* flattenTree(tree: INode): any {
 //   yield tree;
@@ -68,8 +67,6 @@ const ReduxTest = () => {
   const user = useSelector((state: any) => state.user);
   const arr = useFlattenedTree();
 
-  const history = useHistory()
-
   // user
   const changeUser = () => {
     dispatch(createEditAction({ name: "www" }));
@@ -109,7 +106,10 @@ const ReduxTest = () => {
     );
   };
   return (
-   <PageContainer>
+   <PageContainer
+    header={{
+      title: 'react-redux学习'
+    }}>
     <div>
       <h2>用户基本信息</h2>
       <div>

@@ -8,10 +8,14 @@ import UseContextCom from "./child/UseContextCom"
 import UseImperativeHandleCom from "./child/UseImperativeHandleCom"
 import ReactForwardRef from "./child/ReactForwardRef"
 import PortalCom from "./child/PortalCom"
+import PageContainer from "../../components/PageContainer"
 
 const ReactTest = () => {
   return (
-    <div>
+    <PageContainer
+      header={{
+        title: 'React练习'
+      }}>
       <h2>ReactTest</h2>
       <h3>useState: </h3>
       <UseStateCom/>
@@ -31,7 +35,7 @@ const ReactTest = () => {
       <ReactForwardRef/>
       <h3>Portal</h3>
       <PortalCom/>
-    </div>
+    </PageContainer>
   )
 }
 

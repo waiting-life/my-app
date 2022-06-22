@@ -9,9 +9,9 @@ export default function AntdTest() {
   return (
     <PageContainer 
       header={{
-      title: "Antd学习", 
-      // subTitle: 'This is a subtitle'
-      }}>
+        title: "Antd学习", 
+        // subTitle: 'This is a subtitle'
+        }}>
       <Tabs defaultActiveKey='base'>
         <TabPane tab="基础" key="base" ><Base/></TabPane>
         <TabPane tab="表单" key="form" ><FormCom/></TabPane>

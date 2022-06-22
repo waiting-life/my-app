@@ -5,7 +5,7 @@ import Login from '../pages/Login'
 import Other from '../pages/Other'
 import Test from '../pages/Test'
 import ReactTest from '../pages/ReactTest'
-// import { FrontStudy, OtherStudy } from '../pages/study'
+import { FrontStudy, OtherStudy } from '../pages/study'
 // () => import(/* webpackChunkName: "about" */'../pages/Home')
 
 export interface RouteItem {
@@ -17,63 +17,50 @@ export interface RouteItem {
 }
 
 export const routes: RouteItem[] = [
-  // {
-  //   path: 'study',
-  //   redirect: '/front-study',
-  //   routes: [
-  //     {
-  //       path: '/front-study',
-  //       title: '前端学习', 
-  //       component: FrontStudy
-  //     },
-  //     {
-  //       path: '/other-study',
-  //       title: '其他学习', 
-  //       component: OtherStudy
-  //     }
-  //   ]
-  // },
   {
     path: '/home', 
     title: '首页',
     component: Home
   },
   {
-    path: '/mytest',
-    title: '我的练习',
+    path: 'study',
+    title:'学习系统',
+    redirect: '/study/front-study',
     routes: [
       {
-        path: '/antd-test',
+        path: '/study/front-study',
+        title: '前端学习', 
+        component: FrontStudy
+      },
+      {
+        path: '/study/other-study',
+        title: '其他学习', 
+        component: OtherStudy
+      }
+    ]
+  },
+  {
+    path: 'mytest',
+    title: '我的练习',
+    redirect: '/mytest/antd-test',
+    routes: [
+      {
+        path: '/mytest/antd-test',
         title: 'antd练习',
         component: AntdTest
       },
       {
-        path: '/react-test',
+        path: '/mytest/react-test',
         title: 'react练习',
         component: ReactTest
       },
       {
-        path: '/redux-test',
+        path: '/mytest/redux-test',
         title: 'redux测试',
         component: ReduxTest
       },
     ]
   },
-  // {
-  //   path: '/antd-test',
-  //   title: 'antd练习',
-  //   component: AntdTest
-  // },
-  // {
-  //   path: '/react-test',
-  //   title: 'react练习',
-  //   component: ReactTest
-  // },
-  // {
-  //   path: '/redux-test',
-  //   title: 'redux测试',
-  //   component: ReduxTest
-  // },
   {
     path: '/other',
     title: '其他',

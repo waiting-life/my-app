@@ -2,14 +2,8 @@ import { useHistory } from "react-router-dom";
 import { Menu } from "antd";
 import type { MenuProps } from 'antd';
 import { routes } from "../../router";
+import type { RouteItem } from '../../router/index'
 
-interface RouteItem {
-  path: string;
-  title?: string;
-  component?: any;
-  redirect?: string;
-  routes?: RouteItem[]
-}
 type MenuItem = Required<MenuProps>['items'][number];
 
 function getItems(routes: RouteItem[]) {
@@ -26,7 +20,6 @@ function getItems(routes: RouteItem[]) {
   return arr
 }
 const items: MenuItem[] = getItems(routes)
-
 const SiderMenu = () => {
   const history = useHistory()
   const handleMenuItem: MenuProps['onClick'] = (e) => {
