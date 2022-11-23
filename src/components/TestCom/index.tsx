@@ -14,8 +14,8 @@ const TestCom = (props: any) => {
   }
   enum E2 {
     A = 1,
-    B,
-    C,
+    B = 2,
+    C = 3,
   }
   const getSomeValue = (value: any) => value
   enum E {
@@ -91,7 +91,7 @@ const TestCom = (props: any) => {
   return (
     <div>
       <div>
-          <Button>hover 展示菜单</Button>
+        <Button>hover 展示菜单</Button>
       </div>
       <ProTableTest />
       <ProTableOtherTest />

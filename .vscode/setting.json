@@ -1,14 +1,7 @@
 {
-  "prettier.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-  "editor.formatOnType": true,
-  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.quiet": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  }
+  },
+  "files.eol": "\n"
 }

@@ -1,9 +1,11 @@
-const ComRenderItem = ({ title, content, count } : { title: string; content: string; count: number; }) => {
+import { ItemDataType } from '../ComRenderList'
+
+const ComRenderItem = ({ title, content, count }: ItemDataType) => {
   return (
     <div>
-        <div>{title}</div>
-        <div>{content}</div>
-        <div>{ count }</div>
+      <div>{title}</div>
+      <div>{content}</div>
+      <div>{count}</div>
     </div>
   )
 }
