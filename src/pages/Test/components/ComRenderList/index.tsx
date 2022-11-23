@@ -33,7 +33,13 @@ const ComRenderList = () => {
 
   const handleClick = (index: number) => {
     console.log('>>>>点击')
-    const newDataList = dataList.map((item) => {})
+    const newDataList = dataList.map((item, index1) => {
+      if (index1 === index) {
+        item.count++
+      }
+      return item
+    })
+    setDataList(newDataList)
   }
 
   return (
